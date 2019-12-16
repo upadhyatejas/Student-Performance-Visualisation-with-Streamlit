@@ -3,8 +3,11 @@ import plotly.graph_objects as go
 import streamlit as st
 import pandas as pd
 import numpy as np
+st.title("Data Analytics lab project by - P Tejas Upadhya, Suyash Pathak, Shivam Raj, Greeshma Elachitaya")
+st.subheader('\n')
 df = pd.read_csv('StudentsPerformance.csv')
 df.drop(['parental level of education','lunch','test preparation course'], axis =1, inplace = True)
+
 
 
 #show dataframe in sidebar
