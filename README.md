@@ -13,3 +13,5 @@ sudo -H pip3 install numpy
 ```bash
 streamlit run StudPerfVis.py
 ```
+## Dataset
+The dataset is confidential and can't be relased as of now, those interested can mail me a request at tejasupadhya98@gmail.com 
