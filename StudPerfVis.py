@@ -18,8 +18,9 @@ col2 = st.sidebar.selectbox('Which feature on y ?', df.columns[2:])
 col = st.sidebar.selectbox("which legend scheme on graph ? ", ['Bloom level', 'gender'])
 
 #create figure using plotly express
-fig = px.scatter(df, x = range(0, 1000), y = col2, color = col)
+fig = px.scatter(df, x = range(0, 1000), y = col2, color = col, marginal_y = 'violin', marginal_x = 'box', trendline = 'ols')
 fig0 = px.scatter_3d(df, x = df['java score'], y = df['python score'], z = df['DS score'], color = col)
+fig00 = px.scatter_matrix(df)
 #plot
 st.plotly_chart(fig)
 st.plotly_chart(fig0)
@@ -31,3 +32,8 @@ col1 = st.sidebar.selectbox("which feature to merge,", ['gender', 'Bloom level']
 fig2 = px.histogram(df, x = feature, marginal = 'rug', color = col1)
 st.plotly_chart(fig2)
 
+#create a density contour to observe the distribution of datapoints
+st.sidebar.subheader('Density contour')
+col1x = st.sidebar.selectbox("which feature on x ?", df.columns[2:])
+fig3 = px.density_contour(df, x = col1x, y = range(0,1000))
+st.plotly_chart(fig3)
